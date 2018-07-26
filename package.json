@@ -2,11 +2,12 @@
   "name": "icomoon-react",
   "version": "0.0.3",
   "description": "Component let which let you use icomoon selection.json file to display svg's",
-  "main": "./src/Components/IcomoonReact/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel src/Components/IcomoonReact -d dist --copy-files"
   },
   "author": {
     "name": "Kamil Albrycht",
@@ -19,14 +20,15 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
-    "eslint-loader": "^2.0.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "17.0.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",

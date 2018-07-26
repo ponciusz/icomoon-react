@@ -4,6 +4,7 @@ public
 .babelrc
 .gitignore
 .nvmrc
+.eslintrc
 webpack.config.js
 index.html
 index.js

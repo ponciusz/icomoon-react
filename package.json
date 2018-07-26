@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/ponciusz/icomoon-react.git"
   },
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"

@@ -11,7 +11,7 @@ for NPM:
 npm install icomoon-react
 ```
 
-##How to use:
+## How to use:
 
 use `selection.json` generated from http://icomoon.io/app
 
@@ -30,7 +30,7 @@ To console.log all icons use: `iconList(iconSet)` function
 
 To not include set all over again just create your wraper component:
 
-####Icon.js
+#### Icon.js
 ```
 import React from "react";
 import iconSet from "somewhere/selection.json";
@@ -47,7 +47,7 @@ const Icon = props => (
 export default Icon;
 ```
 
-###App.js
+### App.js
 ```
 import React, { Component } from "react";
 import Icon from "./Icon";

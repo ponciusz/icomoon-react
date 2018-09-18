@@ -13,7 +13,7 @@ for NPM:
 npm install icomoon-react
 ```
 
-## How to use:
+## Quick usage:
 
 use `selection.json` generated from http://icomoon.io/app
 
@@ -30,40 +30,46 @@ than just use component in code:
 
 To console.log all icons use: `iconList(iconSet)` function
 
+## Advenced usage:
+
 To not include set all over again just create your wraper component:
 
 #### Icon.js
 ```
-import React from "react";
-import iconSet from "somewhere/selection.json";
-import IcomoonReact, { iconList } from "icomoon-react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import IcomoonReact from '../IcomoonReact';
+import iconSet from '../../assets/icons/selection.json';
 
-const Icon = props => (
-  <IcomoonReact
-    iconSet={iconSet}
-    color={props.color || '#f00'}
-    size={props.size || 100}
-    icon={props.icon}
-  />
-);
+const Icon = (props) => {
+  const { color, size, icon } = props;
+  return <IcomoonReact 
+    iconSet={iconSet} 
+    color={color || '#f00'} 
+    size={size || 100} 
+    icon={icon} 
+  />;
+};
+
+Icon.propTypes = {
+  color: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+};
+
 export default Icon;
 ```
 
 ### App.js
 ```
-import React, { Component } from "react";
-import Icon from "./Icon";
+import React from 'react';
+import Icon from '../Icon';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-          <Icon icon="bath" />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Icon color="#444" size={100} icon="bath" />
+  </div>
+);
 
 export default App;
-
 ```

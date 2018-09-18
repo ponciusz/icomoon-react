@@ -14,4 +14,4 @@ deploy:
   email: ponciusz@gmail.com
   api_key: $NPM_TOKEN
   on:
-    tags: false
+    branch: master

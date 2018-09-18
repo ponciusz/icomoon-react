@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ponciusz/icomoon-react.svg?branch=master)](https://travis-ci.org/ponciusz/icomoon-react)
+
 # icomoon-react
 
 React Component which let you use icomoon selection.json file to display svg's icons

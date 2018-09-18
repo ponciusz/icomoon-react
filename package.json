@@ -3,6 +3,10 @@
   "version": "0.0.9",
   "description": "Component let which let you use icomoon selection.json file to display svg's",
   "main": "dist/index.js",
+  "engines": {
+    "node": "^8.11.3",
+    "npm": "^5.6.0"
+  },
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open",
     "build": "webpack --mode production",

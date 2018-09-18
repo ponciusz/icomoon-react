@@ -8,3 +8,10 @@ install:
 
 after_script:
   -  yarn transpile
+
+deploy:
+  provider: npm
+  email: ponciusz@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true

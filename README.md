@@ -73,3 +73,11 @@ const App = () => (
 
 export default App;
 ```
+
+# Develop
+
+clone repo `git clone git@github.com:ponciusz/icomoon-react.git`
+
+`yarn install`
+
+`yarn start`

@@ -21,7 +21,7 @@ Icon List
       </thead>
       <tbody>
         {iconList(iconSet).map(icon => (
-          <tr>
+          <tr key={icon}>
             <td style={styles}>
               <Icon color="#444" size={30} icon={icon} />
             </td>

@@ -30,7 +30,7 @@ than just use component in code:
 
 To console.log all icons use: `iconList(iconSet)` function
 
-## Advenced usage:
+## Advanced usage:
 
 To not include set all over again just create your wraper component:
 

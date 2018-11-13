@@ -2,13 +2,15 @@
 
 # icomoon-react
 
-React Component which let you use icomoon selection.json file to display svg's icons
+React Component which let you use icomoon selection.json file to display svg's icons. 
 
-for YARN:
+Short example can be found [here](https://codesandbox.io/s/q89onw1kqq)
+
+installation with YARN:
 ```
 yarn add icomoon-react
 ```
-for NPM:
+installation with  NPM:
 ```
 npm install icomoon-react
 ```

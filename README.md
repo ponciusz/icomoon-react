@@ -65,11 +65,11 @@ export default Icon;
 ### App.js
 ```
 import React from 'react';
-import Icon from '../Icon';
+import Icon from './Icon';
 
 const App = () => (
   <div>
-    <Icon color="#444" size={100} icon="bath" />
+    <Icon color="#444" size={100} icon="pencil2" />
   </div>
 );
 

@@ -45,7 +45,7 @@ Icon.propTypes = {
   iconSet: PropTypes.shape({}).isRequired,
   color: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default Icon;

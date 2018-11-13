@@ -5,9 +5,7 @@ node_js:
 
 install:
   - yarn install
-
-after_script:
-  -  yarn transpile
+  - yarn transpile
 
 deploy:
   provider: npm

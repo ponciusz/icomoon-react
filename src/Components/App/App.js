@@ -15,7 +15,7 @@ const App = () => (
       <thead>
         <tr>
           <th style={styles} colSpan={2}>
-Icon List
+            Icon List
           </th>
         </tr>
       </thead>

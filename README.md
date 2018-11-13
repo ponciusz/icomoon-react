@@ -40,8 +40,8 @@ To not include set all over again just create your wraper component:
 ```
 import React from 'react';
 import PropTypes from 'prop-types';
-import IcomoonReact from '../IcomoonReact';
-import iconSet from '../../assets/icons/selection.json';
+import IcomoonReact from 'icomoon-react';
+import iconSet from './selection.json';
 
 const Icon = (props) => {
   const { color, size, icon } = props;

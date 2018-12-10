@@ -18,20 +18,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var iconList = exports.iconList = function iconList(iconSet) {
   var list = [];
   iconSet.icons.forEach(function (icon) {
-    list.push(icon.properties.name);
+    list.push(icon.properties.name.split(', ')[0]);
   });
   return list;
 };
 
-function getPath(iconPaths, iconName) {
-  var icon = iconPaths.icons.find(function (iconEl) {
-    return iconEl.properties.name === iconName;
+function getSvg(icon, iconSet, styles, size) {
+  var currentIcon = iconSet.icons.find(function (iconEl) {
+    return iconEl.properties.name.split(', ').includes(icon);
   });
 
-  if (icon) {
-    return icon.icon.paths.join(' ');
+  if (currentIcon) {
+    return _react2.default.createElement(
+      'svg',
+      { style: styles.svg, width: size, height: size, viewBox: '0 0 ' + currentIcon.icon.width + ' 1024' },
+      _react2.default.createElement('path', { style: styles.path, d: currentIcon.icon.paths.join(' ') })
+    );
   }
-  console.warn('icon ' + iconName + ' does not exist.');
+  console.warn('icon ' + icon + ' does not exist.');
   return '';
 }
 
@@ -52,11 +56,7 @@ var Icon = function Icon(props) {
     }
   };
 
-  return _react2.default.createElement(
-    'svg',
-    { style: styles.svg, width: size, height: size, viewBox: '0 0 1024 1024' },
-    _react2.default.createElement('path', { style: styles.path, d: getPath(iconSet, icon) })
-  );
+  return getSvg(icon, iconSet, styles, size);
 };
 
 Icon.propTypes = {

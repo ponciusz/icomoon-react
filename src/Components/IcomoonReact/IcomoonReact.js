@@ -4,19 +4,23 @@ import PropTypes from 'prop-types';
 export const iconList = (iconSet) => {
   const list = [];
   iconSet.icons.forEach((icon) => {
-    list.push(icon.properties.name);
+    list.push(icon.properties.name.split(', ')[0]);
   });
   return list;
 };
 
-function getPath(iconPaths, iconName) {
-  const icon = iconPaths.icons.find(iconEl => iconEl.properties.name === iconName);
+function getSvg(icon, iconSet, styles, size) {
+  const currentIcon = iconSet.icons.find(iconEl => iconEl.properties.name.split(', ').includes(icon));
 
-  if (icon) {
-    return icon.icon.paths.join(' ');
+  if (currentIcon) {
+    return (
+      <svg style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width} 1024`}>
+        <path style={styles.path} d={currentIcon.icon.paths.join(' ')} />
+      </svg>
+    );
   }
-  console.warn(`icon ${iconName} does not exist.`);
-  return '';
+  console.warn(`icon ${icon} does not exist.`);
+  return null;
 }
 
 const Icon = (props) => {
@@ -35,9 +39,8 @@ const Icon = (props) => {
   };
 
   return (
-    <svg style={styles.svg} width={size} height={size} viewBox="0 0 1024 1024">
-      <path style={styles.path} d={getPath(iconSet, icon)} />
-    </svg>
+    getSvg(icon, iconSet, styles, size)
+
   );
 };
 

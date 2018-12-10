@@ -5,6 +5,7 @@ public
 .gitignore
 .nvmrc
 .eslintrc
+.idea
 webpack.config.js
 index.html
 index.js

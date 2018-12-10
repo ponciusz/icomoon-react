@@ -14,7 +14,7 @@ function getSvg(icon, iconSet, styles, size) {
 
   if (currentIcon) {
     return (
-      <svg style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width} 1024`}>
+      <svg style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}>
         <path style={styles.path} d={currentIcon.icon.paths.join(' ')} />
       </svg>
     );

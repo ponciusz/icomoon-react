@@ -20,7 +20,7 @@ function getSvg(icon, iconSet, styles, size) {
     );
   }
   console.warn(`icon ${icon} does not exist.`);
-  return null;
+  return '';
 }
 
 const Icon = (props) => {

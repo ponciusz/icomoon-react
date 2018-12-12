@@ -23,7 +23,7 @@ var iconList = exports.iconList = function iconList(iconSet) {
   return list;
 };
 
-function getSvg(icon, iconSet, styles, size) {
+function getSvg(icon, iconSet, styles, size, className) {
   var currentIcon = iconSet.icons.find(function (iconEl) {
     return iconEl.properties.name.split(', ').includes(icon);
   });
@@ -31,7 +31,7 @@ function getSvg(icon, iconSet, styles, size) {
   if (currentIcon) {
     return _react2.default.createElement(
       'svg',
-      { style: styles.svg, width: size, height: size, viewBox: '0 0 ' + currentIcon.icon.width + ' 1024' },
+      { className: className, style: styles.svg, width: size, height: size, viewBox: '0 0 ' + (currentIcon.icon.width || '1024') + ' 1024' },
       _react2.default.createElement('path', { style: styles.path, d: currentIcon.icon.paths.join(' ') })
     );
   }
@@ -43,7 +43,8 @@ var Icon = function Icon(props) {
   var color = props.color,
       size = props.size,
       icon = props.icon,
-      iconSet = props.iconSet;
+      iconSet = props.iconSet,
+      className = props.className;
 
 
   var styles = {
@@ -56,14 +57,19 @@ var Icon = function Icon(props) {
     }
   };
 
-  return getSvg(icon, iconSet, styles, size);
+  return getSvg(icon, iconSet, styles, size, className);
 };
 
 Icon.propTypes = {
+  className: _propTypes2.default.string,
   iconSet: _propTypes2.default.shape({}).isRequired,
   color: _propTypes2.default.string.isRequired,
   icon: _propTypes2.default.string.isRequired,
   size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]).isRequired
+};
+
+Icon.defaultProps = {
+  className: ''
 };
 
 exports.default = Icon;

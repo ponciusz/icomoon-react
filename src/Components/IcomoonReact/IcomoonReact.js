@@ -9,12 +9,12 @@ export const iconList = (iconSet) => {
   return list;
 };
 
-function getSvg(icon, iconSet, styles, size) {
+function getSvg(icon, iconSet, styles, size, className) {
   const currentIcon = iconSet.icons.find(iconEl => iconEl.properties.name.split(', ').includes(icon));
 
   if (currentIcon) {
     return (
-      <svg style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}>
+      <svg className={className} style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}>
         <path style={styles.path} d={currentIcon.icon.paths.join(' ')} />
       </svg>
     );
@@ -25,7 +25,7 @@ function getSvg(icon, iconSet, styles, size) {
 
 const Icon = (props) => {
   const {
-    color, size, icon, iconSet,
+    color, size, icon, iconSet, className,
   } = props;
 
   const styles = {
@@ -39,16 +39,20 @@ const Icon = (props) => {
   };
 
   return (
-    getSvg(icon, iconSet, styles, size)
-
+    getSvg(icon, iconSet, styles, size, className)
   );
 };
 
 Icon.propTypes = {
+  className: PropTypes.string,
   iconSet: PropTypes.shape({}).isRequired,
   color: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};
+
+Icon.defaultProps = {
+  className: '',
 };
 
 export default Icon;

@@ -31,7 +31,14 @@ function getSvg(icon, iconSet, styles, size, className) {
   if (currentIcon) {
     return _react2.default.createElement(
       'svg',
-      { className: className, style: styles.svg, width: size, height: size, viewBox: '0 0 ' + (currentIcon.icon.width || '1024') + ' 1024' },
+      {
+        className: className,
+        style: styles.svg,
+        width: size,
+        height: size,
+        viewBox: '0 0 ' + (currentIcon.icon.width || '1024') + ' 1024',
+        xmlns: 'http://www.w3.org/2000/svg'
+      },
       _react2.default.createElement('path', { style: styles.path, d: currentIcon.icon.paths.join(' ') })
     );
   }

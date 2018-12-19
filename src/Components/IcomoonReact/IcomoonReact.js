@@ -14,7 +14,14 @@ function getSvg(icon, iconSet, styles, size, className) {
 
   if (currentIcon) {
     return (
-      <svg className={className} style={styles.svg} width={size} height={size} viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}>
+      <svg
+        className={className}
+        style={styles.svg}
+        width={size}
+        height={size}
+        viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path style={styles.path} d={currentIcon.icon.paths.join(' ')} />
       </svg>
     );

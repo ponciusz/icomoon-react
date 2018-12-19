@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - 8.11.3
 
+cache: yarn
+
 install:
   - yarn install
   - yarn transpile

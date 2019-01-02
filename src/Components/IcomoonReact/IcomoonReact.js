@@ -34,7 +34,7 @@ function getSvg(icon, iconSet, styles, size, className) {
         viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}
         xmlns="http://www.w3.org/2000/svg"
       >
-        {currentIcon.icon.paths.map(renderPath(icon))}
+        {currentIcon.icon.paths.map(renderPath(currentIcon.icon))}
       </svg>
     );
   }

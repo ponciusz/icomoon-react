@@ -23,7 +23,7 @@ const App = () => (
         {iconList(iconSet).map(icon => (
           <tr key={icon}>
             <td style={styles}>
-              <Icon className="example-optional-class" color="#444" size={30} icon={icon} />
+              <Icon className="example-optional-class" size={30} icon={icon} />
             </td>
             <td style={styles}>
               {icon}

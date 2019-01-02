@@ -10,7 +10,19 @@ export const iconList = (iconSet) => {
 };
 
 function getSvg(icon, iconSet, styles, size, className) {
-  const currentIcon = iconSet.icons.find(iconEl => iconEl.properties.name.split(', ').includes(icon));
+  const find = iconEl => iconEl.properties.name.split(', ').includes(icon);
+  const currentIcon = iconSet.icons.find(find);
+  const renderPath = iconObj => (path, index) => {
+    const attrs = (iconObj.attrs && iconObj.attrs[index]) || {};
+    return (
+      <path
+        style={styles.path}
+        key={index}
+        d={path}
+        {...attrs}
+      />
+    );
+  };
 
   if (currentIcon) {
     return (
@@ -22,7 +34,7 @@ function getSvg(icon, iconSet, styles, size, className) {
         viewBox={`0 0 ${currentIcon.icon.width || '1024'} 1024`}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path style={styles.path} d={currentIcon.icon.paths.join(' ')} />
+        {currentIcon.icon.paths.map(renderPath(icon))}
       </svg>
     );
   }

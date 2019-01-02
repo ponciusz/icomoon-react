@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.iconList = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -24,9 +26,20 @@ var iconList = exports.iconList = function iconList(iconSet) {
 };
 
 function getSvg(icon, iconSet, styles, size, className) {
-  var currentIcon = iconSet.icons.find(function (iconEl) {
+  var find = function find(iconEl) {
     return iconEl.properties.name.split(', ').includes(icon);
-  });
+  };
+  var currentIcon = iconSet.icons.find(find);
+  var renderPath = function renderPath(iconObj) {
+    return function (path, index) {
+      var attrs = iconObj.attrs && iconObj.attrs[index] || {};
+      return _react2.default.createElement('path', _extends({
+        style: styles.path,
+        key: index,
+        d: path
+      }, attrs));
+    };
+  };
 
   if (currentIcon) {
     return _react2.default.createElement(
@@ -39,7 +52,7 @@ function getSvg(icon, iconSet, styles, size, className) {
         viewBox: '0 0 ' + (currentIcon.icon.width || '1024') + ' 1024',
         xmlns: 'http://www.w3.org/2000/svg'
       },
-      _react2.default.createElement('path', { style: styles.path, d: currentIcon.icon.paths.join(' ') })
+      currentIcon.icon.paths.map(renderPath(icon))
     );
   }
   console.warn('icon ' + icon + ' does not exist.');

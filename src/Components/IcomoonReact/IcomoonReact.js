@@ -39,10 +39,10 @@ function getSvg(icon, iconSet, styles, size, className) {
     );
   }
   console.warn(`icon ${icon} does not exist.`);
-  return '';
+  return null;
 }
 
-const Icon = (props) => {
+const IcomoonReact = (props) => {
   const {
     color, size, icon, iconSet, className,
   } = props;
@@ -62,7 +62,7 @@ const Icon = (props) => {
   );
 };
 
-Icon.propTypes = {
+IcomoonReact.propTypes = {
   className: PropTypes.string,
   iconSet: PropTypes.shape({}).isRequired,
   color: PropTypes.string.isRequired,
@@ -70,8 +70,8 @@ Icon.propTypes = {
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
-Icon.defaultProps = {
+IcomoonReact.defaultProps = {
   className: '',
 };
 
-export default Icon;
+export default IcomoonReact;

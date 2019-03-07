@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import defaultSet from '../../assets/icons/selection.json';
 
 export const iconList = (iconSet) => {
   const list = [];
@@ -72,6 +73,7 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   className: '',
+  iconSet:defaultSet
 };
 
 export default Icon;

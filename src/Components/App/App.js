@@ -1,6 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
-import { iconList } from '../IcomoonReact';
+import IcomoonReact, { iconList } from '../IcomoonReact';
 import iconSet from '../../assets/icons/selection.json';
 
 const styles = {
@@ -23,7 +22,7 @@ const App = () => (
         {iconList(iconSet).map(icon => (
           <tr key={icon}>
             <td style={styles}>
-              <Icon className="example-optional-class" size={30} icon={icon} />
+              <IcomoonReact className="example-optional-class" size={30} icon={icon} />
             </td>
             <td style={styles}>
               {icon}

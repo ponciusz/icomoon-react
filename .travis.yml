@@ -9,6 +9,9 @@ install:
   - yarn install
   - yarn transpile
 
+script:
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
+
 deploy:
   provider: npm
   email: ponciusz@gmail.com

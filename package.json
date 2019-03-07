@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open",
     "test": "jest --env=jsdom --coverage",
-    "coveralls": "react-scripts test --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
+    "coveralls": "jest --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
     "transpile": "babel src/Components/IcomoonReact -d dist --copy-files"
   },
   "author": {

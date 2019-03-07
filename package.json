@@ -11,7 +11,7 @@
     "start": "webpack-dev-server --mode development --hot --open",
     "test": "jest --env=jsdom --coverage",
     "coveralls": "jest --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
-    "transpile": "babel src/Components/IcomoonReact -d dist --copy-files"
+    "transpile": "babel src/Components/IcomoonReact -d dist"
   },
   "author": {
     "name": "Kamil Albrycht",

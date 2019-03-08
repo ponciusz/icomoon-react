@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ponciusz/icomoon-react.svg?branch=master)](https://travis-ci.org/ponciusz/icomoon-react) [![Coverage Status](https://coveralls.io/repos/github/ponciusz/icomoon-react/badge.svg?branch=upgrades)](https://coveralls.io/github/ponciusz/icomoon-react?branch=upgrades)
+[![Build Status](https://travis-ci.org/ponciusz/icomoon-react.svg?branch=master)](https://travis-ci.org/ponciusz/icomoon-react) [![Coverage Status](https://coveralls.io/repos/github/ponciusz/icomoon-react/badge.svg?branch=master)](https://coveralls.io/github/ponciusz/icomoon-react?branch=master)
 
 # icomoon-react
 

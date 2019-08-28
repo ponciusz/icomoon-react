@@ -1,12 +1,11 @@
-import React from 'react';
-import Icon from '../Icon';
-import { iconList } from '../IcomoonReact';
-import iconSet from '../../assets/icons/selection.json';
+import React from "react";
+import { Icon, iconList } from "../index";
+import iconSet from "../../assets/icons/selection.json";
 
-const styles = {
-  borderCollapse: 'collapse',
-  border: '1px solid black',
-  padding: '10px',
+const styles: React.CSSProperties = {
+  borderCollapse: "collapse",
+  border: "1px solid black",
+  padding: "10px"
 };
 
 const App = () => (
@@ -25,9 +24,7 @@ const App = () => (
             <td style={styles}>
               <Icon className="example-optional-class" size={30} icon={icon} />
             </td>
-            <td style={styles}>
-              {icon}
-            </td>
+            <td style={styles}>{icon}</td>
           </tr>
         ))}
       </tbody>

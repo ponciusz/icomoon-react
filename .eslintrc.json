@@ -1,0 +1,82 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "prefer-const": "error",
+    "no-undef": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "quote-props": ["error", "as-needed"],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": true,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "quotes": ["error", "single"],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "no-dupe-class-members": "error",
+    "no-duplicate-imports": "error",
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    "no-mixed-operators": "error",
+    "nonblock-statement-body-position": ["error", "below"],
+    "brace-style": "error",
+    "no-else-return": "error",
+    "indent": ["error", 2],
+    "space-before-blocks": "error",
+    "keyword-spacing": ["error", { "before": true }],
+    "space-infix-ops": "error",
+    "eol-last": ["error", "always"],
+    "no-whitespace-before-property": "error",
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "padded-blocks": ["error", "never"],
+    "space-in-parens": ["error", "never"],
+    "array-bracket-spacing": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "block-spacing": "error",
+    "comma-spacing": ["error"],
+    "computed-property-spacing": ["error", "never"],
+    "func-call-spacing": ["error"],
+    "key-spacing": ["error"],
+    "no-trailing-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "comma-style": ["error", "last"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "semi": ["error", "always"],
+    "radix": "error",
+    "no-new-wrappers": "error",
+    "camelcase": "error"
+  },
+  "plugins": ["babel", "react"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

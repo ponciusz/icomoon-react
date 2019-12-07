@@ -6,6 +6,5 @@ yarn.lock
 /node_modules
 /demo
 /dist
-/build/*
-# testing
+/build
 /coverage

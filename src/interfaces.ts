@@ -3,5 +3,5 @@ export interface IcomoonReactProps {
   size: string | number;
   icon: string;
   iconSet?: Object;
-  className: string;
+  className?: string;
 }

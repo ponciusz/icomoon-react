@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --mode development --hot --open",
     "fix": "prettier-eslint --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest --env=jsdom --testPathIgnorePatterns \"demo/*.*\" --coverage",
+    "test": "jest --env=jsdom",
     "coveralls": "jest --env=jsdom --testPathIgnorePatterns \"demo/*.*\" --coverage --coverageReporters=text-lcov | coveralls",
     "tsc": "tsc"
   },

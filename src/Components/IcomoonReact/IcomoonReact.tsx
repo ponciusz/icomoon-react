@@ -35,7 +35,7 @@ function getSvg(icon, iconSet, styles, size, className) {
   return null;
 }
 
-const IcomoonReact: React.FC<IcomoonReactProps> = props => {
+export const IcomoonReact: React.FC<IcomoonReactProps> = props => {
   const { color, size, icon, iconSet, className = "" } = props;
 
   const styles = {

@@ -2,7 +2,7 @@
   "name": "icomoon-react",
   "version": "2.0.0",
   "description": "Component let which let you use icomoon selection.json file to display svg's",
-  "main": "build/Components/IcomoonReact/index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --mode development --hot --open",
     "fix": "prettier-eslint --write 'src/**/*.{js,jsx,ts,tsx}'",

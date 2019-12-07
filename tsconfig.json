@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./build/",
     "sourceMap": true,
-    "rootDirs": ["src", "stories"],
+    "rootDirs": ["src"],
     "baseUrl": "src",
     "noImplicitAny": false,
     "module": "commonjs",

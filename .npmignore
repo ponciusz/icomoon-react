@@ -1,5 +1,4 @@
 src
-examples
 public
 .babelrc
 .gitignore
@@ -7,6 +6,4 @@ public
 .eslintrc
 .idea
 webpack.config.js
-index.html
-index.js
-yarn.lock
+index.tsx

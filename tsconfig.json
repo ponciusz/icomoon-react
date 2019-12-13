@@ -23,6 +23,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*.*"],
+  "include": ["./src/**/*.*", "./demo/**/*.*"],
   "exclude": ["node_modules", "build", "scripts", "**/*.test.tsx"]
 }

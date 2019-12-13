@@ -1,4 +1,4 @@
-import { IcomoonReact } from "./Components/IcomoonReact/IcomoonReact";
+import { IcomoonReact } from "./IcomoonReact/IcomoonReact";
 
-export { iconList } from "./Components/IcomoonReact/IcomoonReact";
+export { iconList } from "./IcomoonReact/IcomoonReact";
 export default IcomoonReact;

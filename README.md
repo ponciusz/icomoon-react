@@ -2,6 +2,8 @@
 
 # icomoon-react
 
+![Hero Image](/images/hero.png)
+
 React Component which let you use icomoon `selection.json` file to render SVG instead font
 
 Short example can be found [here](https://codesandbox.io/s/q89onw1kqq)

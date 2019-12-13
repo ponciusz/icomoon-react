@@ -18,5 +18,15 @@ workflows:
   version: 2
   one_and_two:
     jobs:
-      - one
-      - two
+      - one:
+          filters:
+            tags:
+              only: /^v.*/
+      - two:
+          requires:
+            - one
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/

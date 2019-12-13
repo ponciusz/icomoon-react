@@ -46,7 +46,7 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - test:
+      - build:
           filters:
             tags:
               only: /^v.*/

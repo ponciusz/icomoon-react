@@ -29,14 +29,14 @@ use `selection.json` generated from http://icomoon.io/app
 - click Download
 - unzip package and grab your `selection.json`
 
-```
-import iconSet from 'somewhere/selection.json'
-import IcomoonReact, {iconList} from 'icomoon-react'
+```js
+import iconSet from "somewhere/selection.json";
+import IcomoonReact, { iconList } from "icomoon-react";
 ```
 
 than just use component in code:
 
-```
+```js
 <IcomoonReact iconSet={iconSet} color="#444" size={100} icon="shower" />
 ```
 

@@ -5,5 +5,14 @@ public
 .nvmrc
 .eslintrc
 .idea
+.eslintrc.json
+coverage
+.vscode
+.huskyrc
+.lintstagedrc
+.travis.yml
+.travis.yml
+tsconfig.json
+build/assets
 webpack.config.js
 index.tsx

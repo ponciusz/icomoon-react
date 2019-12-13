@@ -23,6 +23,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include": ["./src/Components/IcomoonReact","./src/index.ts"],
+  "exclude": ["node_modules", "build", "scripts", "**/*.test.tsx"]
 }

@@ -44,7 +44,7 @@ jobs:
           command: npm publish
 workflows:
   version: 2
-  test-deploy:
+  build-deploy:
     jobs:
       - build:
           filters:

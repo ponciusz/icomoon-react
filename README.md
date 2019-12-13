@@ -48,18 +48,18 @@ To not include set all over again just create your wraper component:
 
 #### Icon.tsx
 
-```
+```js
 import React from "react";
 
 import IcomoonReact from "../IcomoonReact";
 import iconSet from "./pathToSelection/selection.json";
 
 const Icon: React.FC<{
-  color?: string;
-  size: string | number;
-  icon: string;
-  iconSet?: Object;
-  className?: string;
+  color?: string,
+  size: string | number,
+  icon: string,
+  iconSet?: Object,
+  className?: string
 }> = props => {
   const { color, size = "100%", icon, className = "" } = props;
   return (
@@ -78,9 +78,9 @@ export default Icon;
 
 ### App.tsx
 
-```
-import React from 'react';
-import Icon from './Icon';
+```js
+import React from "react";
+import Icon from "./Icon";
 
 const App = () => (
   <div>

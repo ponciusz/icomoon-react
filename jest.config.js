@@ -5,5 +5,5 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ["**/*.{js,jsx,ts,tsx}", "!src/index.ts"],
-  verbose: false
+  verbose: true
 };

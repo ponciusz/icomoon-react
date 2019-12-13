@@ -22,6 +22,8 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
       - two:
           requires:
             - one

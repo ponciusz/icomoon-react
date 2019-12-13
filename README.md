@@ -46,7 +46,7 @@ To console.log all icons use: `iconList(iconSet)` function
 
 To not include set all over again just create your wraper component:
 
-#### Icon.js
+#### Icon.tsx
 
 ```
 import React from "react";
@@ -76,7 +76,7 @@ const Icon: React.FC<{
 export default Icon;
 ```
 
-### App.js
+### App.tsx
 
 ```
 import React from 'react';

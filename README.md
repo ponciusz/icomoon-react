@@ -58,7 +58,6 @@ const Icon: React.FC<{
   color?: string,
   size: string | number,
   icon: string,
-  iconSet?: Object,
   className?: string
 }> = props => {
   const { color, size = "100%", icon, className = "" } = props;

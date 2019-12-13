@@ -1,5 +1,4 @@
 import React from "react";
-import { IcomoonReactProps } from "../../interfaces";
 
 export const iconList = iconSet => {
   const list: Array<string> = [];
@@ -35,8 +34,14 @@ function getSvg(icon, iconSet, styles, size, className) {
   return null;
 }
 
-export const IcomoonReact: React.FC<IcomoonReactProps> = props => {
-  const { color, size, icon, iconSet, className = "" } = props;
+export const IcomoonReact: React.FC<{
+  color?: string;
+  size?: string | number;
+  icon: string;
+  iconSet: Object;
+  className?: string;
+}> = props => {
+  const { color, size = "100%", icon, iconSet, className = "" } = props;
 
   const styles = {
     svg: {

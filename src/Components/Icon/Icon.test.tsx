@@ -12,6 +12,12 @@ describe("IcomoonReact component", () => {
   });
 });
 
+it("rendering star icon", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(<Icon icon="star" />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+
 it("not existion icon not crashing ", () => {
   const div = document.createElement("div");
   ReactDOM.render(

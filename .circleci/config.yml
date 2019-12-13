@@ -41,5 +41,5 @@ jobs:
 
       # run tests!
       - run: yarn test
-      - coveralls/upload
+      - run: npm run coveralls
       - run: yarn tsc

@@ -3,8 +3,14 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+orbs:
+  coveralls: coveralls/coveralls@3.0.3
 jobs:
   build:
+    filters:
+      branches:
+        only:
+          - master
     docker:
       # specify the version you desire here
       - image: circleci/node:12.13.1
@@ -35,4 +41,5 @@ jobs:
 
       # run tests!
       - run: yarn test
+      - coveralls/upload
       - run: yarn tsc

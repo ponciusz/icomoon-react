@@ -2,15 +2,18 @@
 
 # icomoon-react
 
-React Component which let you use icomoon selection.json file to display svg's icons. 
+React Component which let you use icomoon `selection.json` file to render SVG instead font
 
 Short example can be found [here](https://codesandbox.io/s/q89onw1kqq)
 
 installation with YARN:
+
 ```
 yarn add icomoon-react
 ```
-installation with  NPM:
+
+installation with NPM:
+
 ```
 npm install icomoon-react
 ```
@@ -18,6 +21,11 @@ npm install icomoon-react
 ## Quick usage:
 
 use `selection.json` generated from http://icomoon.io/app
+
+- add your desired icons, select from ready library or add custom svg's
+- once done click Generate Font
+- click Download
+- unzip package and grab your `selection.json`
 
 ```
 import iconSet from 'somewhere/selection.json'
@@ -37,16 +45,21 @@ To console.log all icons use: `iconList(iconSet)` function
 To not include set all over again just create your wraper component:
 
 #### Icon.js
-```
-import React from 'react';
-import PropTypes from 'prop-types';
-import IcomoonReact from 'icomoon-react';
-import iconSet from './selection.json';
 
-const Icon = (props) => {
-  const {
-    color, size, icon, className,
-  } = props;
+```
+import React from "react";
+
+import IcomoonReact from "../IcomoonReact";
+import iconSet from "./pathToSelection/selection.json";
+
+const Icon: React.FC<{
+  color?: string;
+  size: string | number;
+  icon: string;
+  iconSet?: Object;
+  className?: string;
+}> = props => {
+  const { color, size = "100%", icon, className = "" } = props;
   return (
     <IcomoonReact
       className={className}
@@ -58,23 +71,11 @@ const Icon = (props) => {
   );
 };
 
-Icon.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string,
-  icon: PropTypes.string.isRequired,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-Icon.defaultProps = {
-  className: '',
-  color: '',
-  size: '100%',
-};
-
 export default Icon;
 ```
 
 ### App.js
+
 ```
 import React from 'react';
 import Icon from './Icon';

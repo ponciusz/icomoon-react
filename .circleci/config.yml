@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test_and_build:
     docker:
       - image: circleci/node:12.13.1
     working_directory: ~/repo
@@ -46,9 +46,9 @@ jobs:
           command: npm publish
 workflows:
   version: 2
-  build_and_npm_publish:
+  icomoonreact_flow:
     jobs:
-      - build:
+      - test_and_build:
           filters:
             tags:
               only: /^v.*/
@@ -56,17 +56,7 @@ workflows:
               ignore: /.*/
       - coveralls_publish:
           requires:
-            - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+            - test_and_build
       - npm_publish:
           requires:
-            - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+            - test_and_build

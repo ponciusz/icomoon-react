@@ -4,11 +4,6 @@ jobs:
     docker:
       - image: circleci/node:12.13.1
     working_directory: ~/repo
-    filters:
-      tags:
-        only: /^v.*/
-      branches:
-        ignore: /.*/
     steps:
       - checkout
       # Download and cache dependencies
@@ -32,6 +27,7 @@ jobs:
   two:
     docker:
       - image: circleci/node:12.13.1
+    working_directory: ~/repo
     steps:
       - attach_workspace:
           at: ~/repo

@@ -46,7 +46,7 @@ jobs:
           command: npm publish
 workflows:
   version: 2
-  icomoonreact_flow:
+  icomoon_flow:
     jobs:
       - test_and_build:
           filters:
@@ -57,6 +57,16 @@ workflows:
       - coveralls_publish:
           requires:
             - test_and_build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
       - npm_publish:
           requires:
             - test_and_build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/

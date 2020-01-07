@@ -143,11 +143,30 @@ describe("IcomoonReact component", () => {
   });
 
   const DefaultSetting = Enzyme.render(
-    <IcomoonReact iconSet={iconSet} icon="star" />
+    <IcomoonReact
+      iconSet={iconSet}
+      icon="envelope-o"
+      style={{ marginTop: "20px" }}
+    />
+  );
+
+  const WithStyles = Enzyme.mount(
+    <IcomoonReact
+      iconSet={iconSet}
+      icon="envelope-o"
+      style={{ marginTop: "20px" }}
+    />
   );
 
   it("rendering component with default setting", () => {
     expect(DefaultSetting).toBeDefined();
+  });
+
+  it("should have custom CSSProps", () => {
+    expect(WithStyles.find("svg").prop("style")).toHaveProperty(
+      "marginTop",
+      "20px"
+    );
   });
 });
 

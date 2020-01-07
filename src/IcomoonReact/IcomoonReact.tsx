@@ -40,7 +40,7 @@ export const IcomoonReact: React.FC<{
   icon: string;
   iconSet: Object;
   className?: string;
-  style?: Object;
+  style?: React.CSSProperties;
 }> = props => {
   const {
     color,
@@ -64,5 +64,7 @@ export const IcomoonReact: React.FC<{
 
   return getSvg(icon, iconSet, styles, size, className);
 };
+
+IcomoonReact.displayName = `IcomoonReact`;
 
 export default IcomoonReact;

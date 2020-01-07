@@ -40,13 +40,22 @@ export const IcomoonReact: React.FC<{
   icon: string;
   iconSet: Object;
   className?: string;
+  style?: Object;
 }> = props => {
-  const { color, size = "100%", icon, iconSet, className = "" } = props;
+  const {
+    color,
+    size = "100%",
+    icon,
+    iconSet,
+    className = "",
+    style = {}
+  } = props;
 
   const styles = {
     svg: {
       display: "inline-block",
-      verticalAlign: "middle"
+      verticalAlign: "middle",
+      ...style
     },
     path: {
       fill: color

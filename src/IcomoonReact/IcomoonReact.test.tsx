@@ -180,3 +180,18 @@ describe("iconList function", () => {
     expect(iconList(iconSet)).toEqual(expect.arrayContaining(expected));
   });
 });
+
+describe("additional props in svg", () => {
+  const WithProps = Enzyme.mount(
+    <IcomoonReact
+      data-test="hello"
+      iconSet={iconSet}
+      icon="envelope-o"
+      style={{ marginTop: "20px" }}
+    />
+  );
+
+  it("should have custom CSSProps", () => {
+    expect(WithProps.find("svg").prop("data-test")).toBe("hello");
+  });
+});

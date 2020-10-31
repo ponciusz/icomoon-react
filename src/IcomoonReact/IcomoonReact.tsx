@@ -8,7 +8,7 @@ export const iconList = iconSet => {
   return list;
 };
 
-function getSvg(icon, iconSet, styles, size, className) {
+function getSvg(icon, iconSet, styles, size, className, rest) {
   const find = iconEl => iconEl.properties.name.split(", ").includes(icon);
   const currentIcon = iconSet.icons.find(find);
   const renderPath = iconObj => (path, index) => {
@@ -25,6 +25,7 @@ function getSvg(icon, iconSet, styles, size, className) {
         height={size}
         viewBox={`0 0 ${currentIcon.icon.width || "1024"} 1024`}
         xmlns="http://www.w3.org/2000/svg"
+        {...rest}
       >
         {currentIcon.icon.paths.map(renderPath(currentIcon.icon))}
       </svg>
@@ -41,6 +42,7 @@ export const IcomoonReact: React.FC<{
   iconSet: Object;
   className?: string;
   style?: React.CSSProperties;
+  [x: string]: any;
 }> = props => {
   const {
     color,
@@ -48,7 +50,8 @@ export const IcomoonReact: React.FC<{
     icon,
     iconSet,
     className = "",
-    style = {}
+    style = {},
+    ...rest
   } = props;
 
   const styles = {
@@ -62,7 +65,7 @@ export const IcomoonReact: React.FC<{
     }
   };
 
-  return getSvg(icon, iconSet, styles, size, className);
+  return getSvg(icon, iconSet, styles, size, className, rest);
 };
 
 IcomoonReact.displayName = `IcomoonReact`;

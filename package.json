@@ -1,6 +1,6 @@
 {
   "name": "icomoon-react",
-  "version": "2.0.19",
+  "version": "2.0.20",
   "description": "Component let which let you use icomoon selection.json file to display svg's",
   "main": "build/src/index.js",
   "scripts": {

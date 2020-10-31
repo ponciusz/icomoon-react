@@ -1,11 +1,11 @@
 {
   "name": "icomoon-react",
-  "version": "2.0.18",
+  "version": "2.0.20",
   "description": "Component let which let you use icomoon selection.json file to display svg's",
   "main": "build/src/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --mode development --hot --open",
-    "fix": "prettier-eslint --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "fix": "prettier-eslint --write $PWD/'src/**/*.{js,jsx,ts,tsx}'",
     "test": "jest --env=jsdom",
     "coveralls": "jest --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
     "tsc": "tsc"

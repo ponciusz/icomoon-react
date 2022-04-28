@@ -1,9 +1,7 @@
-import Enzyme from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import IcomoonReact, { iconList } from "./IcomoonReact";
+import IcomoonReact, { iconList } from "./index";
+import { render, screen } from '@testing-library/react'
 import * as React from "react";
 
-Enzyme.configure({ adapter: new Adapter() });
 
 const iconSet = {
   IcoMoonType: "selection",
@@ -138,36 +136,45 @@ const iconSet = {
 };
 
 describe("IcomoonReact component", () => {
+  render(
+    <IcomoonReact
+      data-testid='svgIcon'
+      className="testClass"
+      iconSet={iconSet}
+      icon="envelope-o"
+      style={{ marginTop: "20px" }}
+    />
+  );
+  const icon = screen.getByTestId('svgIcon')
+
   it("should be defined", () => {
-    expect(IcomoonReact).toBeDefined();
-  });
-
-  const DefaultSetting = Enzyme.render(
-    <IcomoonReact
-      iconSet={iconSet}
-      icon="envelope-o"
-      style={{ marginTop: "20px" }}
-    />
-  );
-
-  const WithStyles = Enzyme.mount(
-    <IcomoonReact
-      iconSet={iconSet}
-      icon="envelope-o"
-      style={{ marginTop: "20px" }}
-    />
-  );
-
-  it("rendering component with default setting", () => {
-    expect(DefaultSetting).toBeDefined();
+    expect(icon).toBeVisible();
+    expect(icon).toHaveClass('testClass')
   });
 
   it("should have custom CSSProps", () => {
-    expect(WithStyles.find("svg").prop("style")).toHaveProperty(
-      "marginTop",
-      "20px"
-    );
+    expect(icon).toHaveStyle({
+      display: 'inline-block',
+      verticalAlign: 'middle',
+      marginTop: '20px'
+    })
   });
+});
+
+
+describe("IcomoonReact component with unknown icon", () => {
+  const { container } = render(
+    <IcomoonReact
+      data-testid='svgIcon'
+      iconSet={iconSet}
+      icon="test123"
+    />
+  );
+
+  it("should be defined", () => {
+    expect(container.firstChild).toBe(null);
+  });
+
 });
 
 describe("iconList function", () => {
@@ -178,20 +185,5 @@ describe("iconList function", () => {
   const expected = ["envelope-o", "group", "exchange", "mobile", "smile-o"];
   it("should return array of icons", () => {
     expect(iconList(iconSet)).toEqual(expect.arrayContaining(expected));
-  });
-});
-
-describe("additional props in svg", () => {
-  const WithProps = Enzyme.mount(
-    <IcomoonReact
-      data-test="hello"
-      iconSet={iconSet}
-      icon="envelope-o"
-      style={{ marginTop: "20px" }}
-    />
-  );
-
-  it("should have custom CSSProps", () => {
-    expect(WithProps.find("svg").prop("data-test")).toBe("hello");
   });
 });

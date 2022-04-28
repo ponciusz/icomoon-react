@@ -2,7 +2,9 @@
   "compilerOptions": {
     "outDir": "./build/",
     "sourceMap": true,
-    "rootDirs": ["src"],
+    "rootDirs": [
+      "src"
+    ],
     "baseUrl": "src",
     "noImplicitAny": false,
     "module": "commonjs",
@@ -23,6 +25,15 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/**/*.*", "./demo/**/*.*"],
-  "exclude": ["node_modules", "build", "scripts", "**/*.test.tsx"]
+  "include": [
+    "./src/**/*.*",
+    "./demo/**/*.*",
+    "public/index.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "**/*.test.tsx"
+  ]
 }
